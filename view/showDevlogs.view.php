@@ -47,7 +47,7 @@
                     <td><?=$log->getDevId()?></td>
                     <td><?=$log->getDevDate()?></td>
                     <td><?=$log->getDevLog()?></td>  
-                    <td><a href="logVis=<?=$action?>&logID=<?=$log->getDevVisible()?>"><?= $action ?></a></td>  
+                    <td><a href="?logVis=<?=$action?>&logID=<?=$log->getDevId()?>"><?= $action ?></a></td>  
                 </tr>
                 <?php
           }                                     
