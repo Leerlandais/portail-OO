@@ -35,6 +35,8 @@
                         <th class="text-center">Date</th>
                         <th class="text-center">Log</th>
                         <th class="text-center">Visible</th>
+                        <th class="text-center">Update</th>
+                        <th class="text-center">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +50,8 @@
                     <td><?=$log->getDevDate()?></td>
                     <td><?=$log->getDevLog()?></td>  
                     <td><a href="?logVis=<?=$action?>&logID=<?=$log->getDevId()?>"><?= $action ?></a></td>  
+                    <td><a href="?logMaj&logID=<?=$log->getDevId()?>">Update</a></td>  
+                    <td><a href="?logDel&logID=<?=$log->getDevId()?>">Delete</a></td>  
                 </tr>
                 <?php
           }                                     
