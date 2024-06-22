@@ -19,6 +19,7 @@ class DevlogManager implements InterfaceManager{
     {
         $sql = "SELECT * 
                 FROM `devlog`
+            --  WHERE `dev_id` > 500 -- Test to see if it works with no logs
                 ORDER BY `dev_id` DESC";
         
         $select = $this->connect->query($sql);
