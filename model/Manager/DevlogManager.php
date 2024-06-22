@@ -71,4 +71,25 @@ class DevlogManager implements InterfaceManager{
             return $e->getMessage();
         }
     }
+
+    public function deleteLogByID(OurPDO $db, int $id) : bool | string {
+        $sql = "DELETE FROM `devlog`
+                WHERE `dev_id` = :id";
+        $stmt = $db->prepare($sql);
+
+        try{
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            if ($stmt->rowCount() === 0) return false;
+            return true;
+        }catch(Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+
+
+
+
+
 }

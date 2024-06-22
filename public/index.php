@@ -40,13 +40,16 @@ DB_PWD);
        $_GET["logVis"] != "Show")  
    throw new Exception("That is not a valid input");
            
-       
+// CHANGE VISIBILITE D'UN DEVLOG
    $act = $_GET["logVis"];
    $id  = $_GET["logID"];
    $changeVis = $devlogManager->changeVisibilityofLog($db, $act, $id);
    if ($changeVis) header("Location: ./");
+
 }
 
+
+// PREPARE LOG POUR SUPPRESSION
     if (isset($_GET["logDel"],
               $_GET["logID"]
              ) &&
@@ -63,7 +66,19 @@ DB_PWD);
             }
         }
 
+// SUPPRESSION DU LOG
+    if (isset($_POST["deleteLog"])
+        && ctype_digit($_POST["deleteLog"])
+    ) {
+        $id = $_POST["deleteLog"];
+        $deleteLog = $devlogManager->deleteLogByID($db, $id);
+        if ($deleteLog != true) {
+            echo "SOMETHING WENT WRONG WITH DELETION";
+        }else {
+            header("Location: ./");
+        }
 
+    }
 
 require "../view/showDevlogs.view.php";
 
