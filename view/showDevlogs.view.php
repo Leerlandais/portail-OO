@@ -7,8 +7,18 @@
 </head>
 <body>
     <h1>Development Logs</h1>
+
+    <form action="" method="post">
+        <label for="addLog">Log : </label>
+        <textarea name="addLog" id="addLog" cols="30" rows="10"></textarea>
+        <input type="submit" value="Add">
+    </form>
     <div>
         <?php
+            if ($tryThis) {
+                echo $test->getDevLog();
+            } 
+            
             if(is_null($selectLogs)) {
         ?>
         <h3>No Logs to Show</h3>

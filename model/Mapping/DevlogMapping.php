@@ -3,9 +3,11 @@
 namespace model\Mapping;
 
 use model\Abstract\AbstractMapping;
+use model\Trait\TraitTestString;
 
 class DevlogMapping extends AbstractMapping
 {
+    use TraitTestString;
 
     protected ?int $dev_id;
     protected ?string $dev_date;
@@ -34,8 +36,14 @@ class DevlogMapping extends AbstractMapping
         return $this->dev_log;
     }
 
-    public function setDevLog(?string $dev_log) : void {
-        $this->dev_log = $dev_log;
+    public function setDevLog(?string $dev_log) : bool {
+        if (is_string($this->verifyString($dev_log))) {
+            echo $this->verifyString($dev_log);
+            return false;
+        }else {
+            $this->dev_log = $dev_log;
+            return true;
+        }
     }
 
 

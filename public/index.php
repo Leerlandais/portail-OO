@@ -7,19 +7,15 @@ use model\OurPDO;
 use model\Manager\DevlogManager;
 use model\Mapping\DevlogMapping;
 
-// Appel de la config
 require_once "../config.php";
 
-
-
-// our autoload
 spl_autoload_register(function ($class) {
     $class = str_replace('\\', '/', $class);
     require PROJECT_DIRECTORY.'/' .$class . '.php';
 });
 
 
-// connect database
+
 $db = OurPDO::getInstance( DB_TYPE.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT.";charset=".DB_CHARSET,
 DB_LOGIN,
 DB_PWD);
@@ -28,9 +24,19 @@ DB_PWD);
  $devlogManager = new DevlogManager($db);
 
  if(empty($_GET)){
-    // all comments
+
     $selectLogs = $devlogManager->selectAll();
-    // view
+
+    if(isset($_POST["addLog"])) {
+        $log = $_POST["addLog"];
+        $test = new DevlogMapping($_POST);
+        
+        $tryThis = $test->setDevLog($log);
+
+
+        }
+    
+
     require "../view/showDevlogs.view.php";
     die();
  }
@@ -39,3 +45,6 @@ include ("../view/home.view.php");
 
 
 $db = null;
+
+
+
