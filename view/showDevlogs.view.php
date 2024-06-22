@@ -17,6 +17,11 @@
                 foreach($selectLogs as $log){ 
         ?>
     <h4><?=$log->getDevId()?></h4>
+    <h5><?=$log->getDevDate()?></h5>
+    <h5><?=$log->getDevLog()?></h5>
+    <h6><?=$log->getDevVisible()?></h6>
+    <hr>
+    
 
         <?php
         }
