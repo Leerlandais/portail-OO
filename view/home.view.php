@@ -8,6 +8,9 @@
 <body>
     
 <?php
+// var_dump($db); // works 22/06-8h00
+var_dump($arrayLogs);
+
 // add BS and JQ cdns globally
 ?>
 
