@@ -1,6 +1,6 @@
 <?php
 
-
+// tout comme abstract fait en classe 
 namespace model\Abstract;
 
 abstract class AbstractMapping
