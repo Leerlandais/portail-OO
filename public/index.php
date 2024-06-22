@@ -80,6 +80,22 @@ DB_PWD);
 
     }
 
+// PREPARE LOG POUR MISE À JOUR
+    if (isset($_GET["logMaj"],
+              $_GET["logID"]
+              ) &&
+              ctype_digit($_GET["logID"])
+        ) {
+            $id = $_GET["logID"];
+            $getLog = $devlogManager->getOneLog($db, $id);
+            if (!is_array($getLog)) {
+                echo "Something went wrong getting the log";
+            }else {
+                $title = "Update Log";
+                // require "../view/deleteLog.view.php";
+                die();
+            }
+        }
 require "../view/showDevlogs.view.php";
 
 $db = null;
