@@ -55,4 +55,20 @@ class DevlogManager implements InterfaceManager{
         }
         return true;
     }
+
+    public function getOneLog(OurPDO $db, int $id) : array|bool|string {
+        $sql = "SELECT *
+                FROM `devlog`
+                WHERE `dev_id` = ?";
+        $stmt = $db->prepare($sql);
+
+        try {
+            $stmt->execute([$id]);
+            if ($stmt->rowCount() === 0) return false;
+            $result = $stmt->fetch(OurPDO::FETCH_ASSOC);
+            return $result; 
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
 }
