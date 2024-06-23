@@ -66,6 +66,7 @@
     </table>
     
 </div>
+          <a href="?addNewLog"><button class="btn btn-rounded btn-outline-primary">Add a Log</button></a>
 </div>
 
 <?php

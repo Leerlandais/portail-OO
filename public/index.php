@@ -25,22 +25,22 @@ DB_PWD);
     $selectLogs = $devlogManager->selectAll();
 
 
-    if(isset($_POST["addLog"])) {
-        $log = $_POST["addLog"];
-        $test = new DevlogMapping($_POST); 
-        $tryThis = $test->setDevLog($log);
+if (isset($_GET["addNewLog"])) {
+    require "../view/addLog.view.php";
+    die();
+}
 
-        }
-        if (isset($_GET["logVis"],
-        $_GET["logID"]
-        ) &&
-        ctype_digit($_GET["logID"])
-        ){
+
+// CHANGE VISIBILITE D'UN DEVLOG
+    if (isset($_GET["logVis"],
+    $_GET["logID"]
+    ) &&
+    ctype_digit($_GET["logID"])
+    ){
    if ($_GET["logVis"] != "Hide" && 
        $_GET["logVis"] != "Show")  
    throw new Exception("That is not a valid input");
            
-// CHANGE VISIBILITE D'UN DEVLOG
    $act = $_GET["logVis"];
    $id  = $_GET["logID"];
    $changeVis = $devlogManager->changeVisibilityofLog($db, $act, $id);
