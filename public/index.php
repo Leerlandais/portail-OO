@@ -98,6 +98,29 @@ DB_PWD);
             }
         }
 
+// MISE À JOUR D'UN LOG
+    if (isset($_POST["updateLogID"],
+              $_POST["updateLogDate"],
+              $_POST["updateLogText"]
+              ) &&
+            ctype_digit($_POST["updateLogID"])
+        ) {
+            $id   = intval($_POST["updateLogID"]);
+            $date = htmlspecialchars(strip_tags(trim($_POST["updateLogDate"])));
+            $text = htmlspecialchars(strip_tags(trim($_POST["updateLogText"])));
+
+            $updateLog = $devlogManager->updateOneLog($db, $id, $date, $text);
+            if (is_string($updateLog)){
+                echo $updateLog;
+            }else if (!$updateLog) {
+                 echo "Something went wrong with the update";
+            }else {
+                header("Location: ./");
+                die();
+            }
+            
+        }
+        
 $title = "Development Logs";
 require "../view/showDevlogs.view.php";
 

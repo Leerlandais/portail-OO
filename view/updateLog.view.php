@@ -8,15 +8,15 @@
     <title><?=$title?></title>
 </head>
 <body>
-    <form class="d-flex flex-column align-items-center justify-content-center" method="POST" action="" id="updateForm">
-        <div class="row w-auto">
+<div class="container d-flex flex-column align-items-center pt-5">
+<p class="h1 mt-5">Update Log Entry?</p>
+    <form class="d-flex flex-column align-items-center justify-content-center" method="POST" action="./" id="updateForm">
+
             <div class="col">
                 <div class="form-group">
                     <input  type="text" 
                             class="form-control text-center d-none" 
                             name="updateLogID" 
-                            id="updateLogID" 
-                            aria-describedby="updateLogID" 
                             placeholder="<?=$getLog->getDevId()?>" 
                             value="<?=$getLog->getDevId()?>">
                 </div>
@@ -25,8 +25,6 @@
                     <input  type="text" 
                             class="form-control text-center" 
                             name="updateLogDate" 
-                            id="updateLogDate" 
-                            aria-describedby="updateLogDate" 
                             placeholder="<?=$getLog->getDevDate()?>"
                             value="<?=$getLog->getDevDate()?>">
                 </div>
@@ -36,16 +34,16 @@
                     <input  type="text" 
                             class="form-control text-center" 
                             name="updateLogText" 
-                            id="updateLogText" 
-                            aria-describedby="updateLogText" 
                             placeholder="<?=$getLog->getDevLog()?>" 
                             value="<?=$getLog->getDevLog()?>">
                 </div>
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-dark rounded-pill mt-3" id="updateButton">Changer</button> 
-                <badge class="btn btn-dark rounded-pill mt-3"><a href="./">Annuler</a></badge> 
+                <button type="submit" class="btn btn-dark rounded-pill mt-3">Update</button> 
+                <badge class="btn btn-dark rounded-pill mt-3"><a href="./">Cancel</a></badge> 
             </div>
-            <p class="h3 text-center text-warning" id="insertError"></p>
-        </div>    
+        </div>  
+
+    </form>
+</div>
     </body>
     </html>

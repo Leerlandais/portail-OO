@@ -93,7 +93,25 @@ class DevlogManager implements InterfaceManager{
         }
     }
 
+    // MISE À JOUR D'UN LOG
+    public function updateOneLog(OurPDO $db, int $id, string $date, string $text) : bool|string {
+        $sql = "UPDATE `devlog` 
+                SET    `dev_date`= ?,
+                       `dev_log`= ? 
+                WHERE  `dev_id` = ?";
+        $stmt = $db->prepare($sql);
 
+        try{
+            $stmt->bindValue(1, $date);
+            $stmt->bindValue(2, $text);
+            $stmt->bindValue(3, $id);
+            $stmt->execute();
+            if ($stmt->rowCount() === 0) return false;
+            return true;
+        }catch(Exception $e) {
+            return $e->getMessage();
+        }
+    }
 
 
 

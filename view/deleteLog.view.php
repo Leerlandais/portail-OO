@@ -14,10 +14,10 @@
             <p class="h4">ID : <?=$getLog->getDevId()?></p>
             <p class="h4">Log : <?=$getLog->getDevLog()?></p>
             <p class="h6">Date : <?=$getLog->getDevDate()?></p>
-            <form action="./" method="POST">
+            <form action="" method="POST">
                 <div class="d-flex flex-row">
                     <button class="btn btn-rounded btn-outline-danger mx-3" name="deleteLog" value="<?=$getLog->getDevId()?>">Delete</button>
-                    <button class="btn btn-rounded btn-outline-warning mx-3">Cancel</button>
+                    <button class="btn btn-rounded btn-outline-warning mx-3"><a href="./">Cancel</a></button>
                 </div>
                 </form>
 
