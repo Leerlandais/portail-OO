@@ -15,7 +15,7 @@ class DevlogMapping extends AbstractMapping
     use TraitTestInt;
 
     protected ?int $dev_id;
-    protected ?string $dev_date;
+    protected ?string $dev_date;   // CE DB ETAIT CREEE IL Y A DES MOIS ET JE N'AVAIS PAS PENSE D'UTILISER DATETIME (JE LE CHANGERAI BIENTOT)
     protected ?string $dev_log;
     protected ?int $dev_visible;
 

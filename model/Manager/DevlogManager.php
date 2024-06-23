@@ -113,7 +113,22 @@ class DevlogManager implements InterfaceManager{
         }
     }
 
+    // AJOUTE D'UN NOUVEAU LOG
+    public function addNewLog(OurPDO $db, string $date, string $text) : bool|string {
+        $sql = "INSERT INTO `devlog`
+                            (`dev_date`, `dev_log`) 
+                     VALUES (? , ?)";
+        $stmt = $db->prepare($sql);
 
+        try{
+            $stmt->execute([$date,
+                            $text]);
+                if ($stmt->rowCount() === 0) return false;
+                return true;
+        }catch(Exception $e) {
+            return $e->getMessage();
+        }
+    }
 
 
 }

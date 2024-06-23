@@ -9,7 +9,7 @@
 2. Mapping de table dev_log et
     - ~~fonctions pour affichage~~
     - ~~fonctions pour delete~~
-    - fonctions pour add
+    - ~~fonctions pour add~~
     - ~~fonctions pour update~~
 3. Mapping de table global_css
     - comme dev_log

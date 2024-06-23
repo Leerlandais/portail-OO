@@ -18,7 +18,8 @@
                     <label for="addLogDate">Date</label>
                     <input  type="text" 
                             class="form-control text-center" 
-                            name="addLogDate">
+                            name="addLogDate"
+                            placeholder="23/06/2024">
                 </div>
                 
                 <div class="form-group">

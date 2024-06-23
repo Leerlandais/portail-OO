@@ -1,6 +1,6 @@
 <?php
+// BEAUCOUP DES CHOSES ICI VONT EST DEPLACER DANS DES AUTRES FICHIER
 
-// session
 session_start();
 
 use model\OurPDO;
@@ -24,12 +24,29 @@ DB_PWD);
 
     $selectLogs = $devlogManager->selectAll();
 
-
+// ADD NEW LOG
 if (isset($_GET["addNewLog"])) {
+    $title = "Add Log";
     require "../view/addLog.view.php";
     die();
 }
 
+if (isset($_POST["addLogDate"],
+          $_POST["addLogText"])
+    ) {
+        $date = htmlspecialchars(trim(strip_tags($_POST["addLogDate"])));
+        $text = htmlspecialchars(trim(strip_tags($_POST["addLogText"])));
+
+        $addNewLog = $devlogManager->addNewLog($db, $date, $text);
+        if(is_string($addNewLog)) {
+            echo $addNewLog;
+        }else if(!$addNewLog) {
+            echo "Something went wrong with insertion of new log entry";
+    }else {
+        header('Location: ./');
+    }
+
+}
 
 // CHANGE VISIBILITE D'UN DEVLOG
     if (isset($_GET["logVis"],
