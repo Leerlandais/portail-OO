@@ -44,6 +44,10 @@
                 <tbody>
                     <?php
                 foreach ($selectLogs as $log) {
+                    /*
+                    $log->setDevID(99999999999999999); // LE PLUS GRAND INT POSSIBLE AVANT CONVERSION VERS FLOAT
+                    PETIT TESTE DE PHP_INT_MAX :-D
+                    */
                     $action = $log->getDevVisible();
                     $action == 1 ? $action = "Hide" : $action = "Show";
                     ?>

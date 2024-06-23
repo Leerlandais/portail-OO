@@ -71,6 +71,7 @@ DB_PWD);
         && ctype_digit($_POST["deleteLog"])
     ) {
         $id = $_POST["deleteLog"];
+
         $deleteLog = $devlogManager->deleteLogByID($db, $id);
         if ($deleteLog != true) {
             echo "SOMETHING WENT WRONG WITH DELETION";

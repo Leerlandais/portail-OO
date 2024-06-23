@@ -1,4 +1,8 @@
 <?php
+// COPIE DE TON OurPDO - POURQUOI EST PDOstatement APPELE MAIS PAS UTILISE?
+
+
+
 /**
  * Classe OurPDO
  *
