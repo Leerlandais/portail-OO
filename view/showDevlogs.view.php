@@ -5,16 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php include("cdn/BS-JS.cdn.php"); ?>
         <link rel="stylesheet" href="styles/colours.css">
-        <title>Development Logs</title>
+        <title><?=$title?></title>
     </head>
     <body>
-        <p class="h1">Development Logs</p>
-        
+        <div class="container d-flex flex-column align-items-center pt-5">
+        <p class="h1 my-5">Development Logs</p>
+        <!--
         <form action="" method="post">
             <label for="addLog">Log : </label>
             <textarea name="addLog" id="addLog" cols="30" rows="10"></textarea>
             <input type="submit" value="Add">
         </form>
+-->
         <div>
             <?php
             if (isset($tryThis) && $tryThis) {
@@ -27,7 +29,7 @@
             }else {
                 ?>
     <div class="container">
-        <div class="table-responsive"> 
+        <div class="table-responsive "> 
             <table class="table table-bordered table-striped text-center" data-toggle="table" data-show-columns="true" data-search="true"data-pagination="true">
                 <thead>
                     <tr>
@@ -71,6 +73,6 @@
     <?php
 // var_dump($db, $selectLogs);
 ?>
-
+</div>
 </body>
 </html>

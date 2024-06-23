@@ -12,7 +12,7 @@ interface InterfaceManager
     public function __construct(OurPDO $pdo);
     public function selectAll();
     public function changeVisibilityofLog(OurPDO $pdo, string $act, int $id) : bool|string;
-    public function getOneLog(OurPDO $db, int $id) : array|bool|string;
+    // public function getOneLog(OurPDO $db, int $id) : array|bool|string;
     public function deleteLogByID(OurPDO $db, int $id) : bool | string;
 
 }

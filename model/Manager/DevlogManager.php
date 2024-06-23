@@ -6,7 +6,7 @@ use Exception;
 use model\Interface\InterfaceManager;
 use model\Mapping\DevlogMapping;
 use model\OurPDO;
-use PDO;
+// use PDO;
 
 class DevlogManager implements InterfaceManager{
     
@@ -16,6 +16,8 @@ class DevlogManager implements InterfaceManager{
         $this->connect = $db;
     }
     
+
+    // RECUPERATION DE TOUTES LOGS POUR AFFICHAGE
     public function selectAll(): ?array
     {
         $sql = "SELECT * 
@@ -35,6 +37,7 @@ class DevlogManager implements InterfaceManager{
         return $arrayLogs;
     }
 
+    // CHANGEMENT DU VISIBILITE D'UN LOG
     public function  changeVisibilityofLog(OurPDO $pdo, string $act, int $id) : bool|string {
         $act == "Hide" ? $act = 0 : $act = 1;
 
@@ -44,8 +47,8 @@ class DevlogManager implements InterfaceManager{
         $stmt = $pdo->prepare($sql);
 
         try{
-            $stmt->bindValue(1, $act, PDO::PARAM_INT);
-            $stmt->bindValue(2, $id, PDO::PARAM_INT);
+            $stmt->bindValue(1, $act, OurPDO::PARAM_INT);
+            $stmt->bindValue(2, $id, OurPDO::PARAM_INT);
 
             $stmt->execute();
             if($stmt->rowCount() === 0) return false;
@@ -56,22 +59,25 @@ class DevlogManager implements InterfaceManager{
         return true;
     }
 
-    public function getOneLog(OurPDO $db, int $id) : array|bool|string {
+    // RECUPERATION D'UN LOG POUR SUPPRESSION OU MISE À JOUR
+    public function getOneLog(OurPDO $db, int $id): DevlogMapping|bool|string {
         $sql = "SELECT *
                 FROM `devlog`
                 WHERE `dev_id` = ?";
         $stmt = $db->prepare($sql);
-
+    
         try {
             $stmt->execute([$id]);
             if ($stmt->rowCount() === 0) return false;
             $result = $stmt->fetch(OurPDO::FETCH_ASSOC);
-            return $result; 
+            $oneLog = new DevlogMapping($result);
+            return $oneLog;
         } catch (Exception $e) {
             return $e->getMessage();
         }
     }
-
+    
+    // SUPPRESSION D'UN LOG
     public function deleteLogByID(OurPDO $db, int $id) : bool | string {
         $sql = "DELETE FROM `devlog`
                 WHERE `dev_id` = :id";

@@ -15,8 +15,6 @@ spl_autoload_register(function ($class) {
     require PROJECT_DIRECTORY.'/' .$class . '.php';
 });
 
-
-
 $db = OurPDO::getInstance( DB_TYPE.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT.";charset=".DB_CHARSET,
 DB_LOGIN,
 DB_PWD);
@@ -25,6 +23,8 @@ DB_PWD);
  $devlogManager = new DevlogManager($db);
 
     $selectLogs = $devlogManager->selectAll();
+
+
     if(isset($_POST["addLog"])) {
         $log = $_POST["addLog"];
         $test = new DevlogMapping($_POST); 
@@ -57,7 +57,7 @@ DB_PWD);
         ) {
             $id = $_GET["logID"];
             $getLog = $devlogManager->getOneLog($db, $id);
-            if (!is_array($getLog)) {
+            if (!is_object($getLog)) {
                 echo "Something went wrong getting the log";
             }else {
                 $title = "Delete Log";
@@ -88,14 +88,17 @@ DB_PWD);
         ) {
             $id = $_GET["logID"];
             $getLog = $devlogManager->getOneLog($db, $id);
-            if (!is_array($getLog)) {
+      
+            if (!is_object($getLog)) {
                 echo "Something went wrong getting the log";
             }else {
                 $title = "Update Log";
-                // require "../view/deleteLog.view.php";
+                require "../view/updateLog.view.php";
                 die();
             }
         }
+
+$title = "Development Logs";
 require "../view/showDevlogs.view.php";
 
 $db = null;

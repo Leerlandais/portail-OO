@@ -8,21 +8,22 @@
         <title><?=$title?></title>
     </head>
     <body>
+
         <div class="container d-flex flex-column align-items-center pt-5">
             <p class="h1 mt-5">Delete Log Entry?</p>
-            <p class="h4">ID : <?=$getLog["dev_id"]?></p>
-            <p class="h4">Log : <?=$getLog["dev_log"]?></p>
-            <p class="h6">Date : <?=$getLog["dev_date"]?></p>
+            <p class="h4">ID : <?=$getLog->getDevId()?></p>
+            <p class="h4">Log : <?=$getLog->getDevLog()?></p>
+            <p class="h6">Date : <?=$getLog->getDevDate()?></p>
             <form action="./" method="POST">
                 <div class="d-flex flex-row">
-                    <button class="btn btn-rounded btn-outline-danger mx-3" name="deleteLog" value="<?=$getLog["dev_id"]?>">Delete</button>
+                    <button class="btn btn-rounded btn-outline-danger mx-3" name="deleteLog" value="<?=$getLog->getDevId()?>">Delete</button>
                     <button class="btn btn-rounded btn-outline-warning mx-3">Cancel</button>
                 </div>
                 </form>
-            
+
         </div>
         <?php
-var_dump($getLog);
+// var_dump($getLog);
 ?>
 
 </body>
