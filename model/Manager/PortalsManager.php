@@ -17,6 +17,7 @@ class PortalsManager
     public function selectAllPortals() : array|string {
         $sql = "SELECT *
                 FROM `portals`
+               -- WHERE `port_id` > 50000 -- verification d'affichage d'erreur
                 ORDER BY `port_id`
                 ASC";
 

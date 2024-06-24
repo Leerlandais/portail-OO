@@ -85,10 +85,14 @@ class PortalsMapping extends AbstractMapping
         }
         $this->port_img_src = $port_img_src;
     }
-    
-    
-    
-    
-    
-    
+    public function setPortImgWidth(?int $port_img_width) : void {
+        if (is_string($this->verifyInt($port_img_width, 0))){
+            echo $this->verifyInt($port_img_width, 0);
+        }
+        $this->port_img_width = $port_img_width;
     }
+    
+    
+    
+    
+    } // end of class
