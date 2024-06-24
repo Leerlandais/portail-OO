@@ -62,8 +62,8 @@ class PortalsMapping extends AbstractMapping
 
     // LES SETTERS
     public function setPortId(?int $port_id) : void {
-        if (is_string($this->verifyInt($port_id, 0))){
-            echo $this->verifyInt($port_id, 0);
+        if (is_string($this->verifyInt($port_id))){
+            echo $this->verifyInt($port_id);
         }
         $this->port_id = $port_id;
     }
@@ -86,8 +86,8 @@ class PortalsMapping extends AbstractMapping
         $this->port_img_src = $port_img_src;
     }
     public function setPortImgWidth(?int $port_img_width) : void {
-        if (is_string($this->verifyInt($port_img_width, 0))){
-            echo $this->verifyInt($port_img_width, 0);
+        if (is_string($this->verifyInt($port_img_width))){
+            echo $this->verifyInt($port_img_width);
         }
         $this->port_img_width = $port_img_width;
     }
@@ -98,8 +98,8 @@ class PortalsMapping extends AbstractMapping
         $this->port_img_width_type = $port_img_width_type;
     }
     public function setPortImgHeight(?int $port_img_height) : void {
-        if (is_string($this->verifyInt($port_img_height, 0))){
-            echo $this->verifyInt($port_img_height, 0);
+        if (is_string($this->verifyInt($port_img_height))){
+            echo $this->verifyInt($port_img_height);
         }
         $this->port_img_height = $port_img_height;
     }

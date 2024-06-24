@@ -25,8 +25,8 @@ class DevlogMapping extends AbstractMapping
 
     public function setDevId(?int $dev_id) : void {
         // AFIN D'UTILISER LE MÊME TRAIT POUR TOUT INT TESTE, IL ATTENDS UN VALEUR MIN ET MAX (DEFAULT TO 0 ET L'INFINI)
-        if (is_string($this->verifyInt($dev_id, 0))){
-            echo $this->verifyInt($dev_id, 0);
+        if (is_string($this->verifyInt($dev_id))){
+            echo $this->verifyInt($dev_id);
         }
         $this->dev_id = $dev_id;
     }
