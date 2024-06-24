@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Jun 22, 2024 at 11:32 AM
--- Server version: 8.2.0
--- PHP Version: 8.2.13
+-- Hôte : 127.0.0.1:3306
+-- Généré le : lun. 24 juin 2024 à 09:04
+-- Version du serveur : 8.0.31
+-- Version de PHP : 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `portal_oop`
+-- Base de données : `portal_oop`
 --
 CREATE DATABASE IF NOT EXISTS `portal_oop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 USE `portal_oop`;
@@ -26,7 +26,7 @@ USE `portal_oop`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `devlog`
+-- Structure de la table `devlog`
 --
 
 DROP TABLE IF EXISTS `devlog`;
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `devlog` (
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `devlog`
+-- Déchargement des données de la table `devlog`
 --
 
 INSERT INTO `devlog` (`dev_id`, `dev_date`, `dev_log`, `dev_visible`) VALUES
@@ -77,7 +77,7 @@ INSERT INTO `devlog` (`dev_id`, `dev_date`, `dev_log`, `dev_visible`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `global_css`
+-- Structure de la table `global_css`
 --
 
 DROP TABLE IF EXISTS `global_css`;
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `global_css` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `global_css`
+-- Déchargement des données de la table `global_css`
 --
 
 INSERT INTO `global_css` (`global_id`, `global_selector`, `global_value`, `global_old_val`, `global_def_val`) VALUES
@@ -108,7 +108,7 @@ INSERT INTO `global_css` (`global_id`, `global_selector`, `global_value`, `globa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `portals`
+-- Structure de la table `portals`
 --
 
 DROP TABLE IF EXISTS `portals`;
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `portals` (
 ) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `portals`
+-- Déchargement des données de la table `portals`
 --
 
 INSERT INTO `portals` (`port_id`, `port_title`, `port_description`, `port_img_src`, `port_img_width`, `port_img_width_type`, `port_img_height`, `port_img_height_type`, `port_dest_url`, `port_visible`, `port_placement`) VALUES
@@ -140,7 +140,7 @@ INSERT INTO `portals` (`port_id`, `port_title`, `port_description`, `port_img_sr
 (79, 'Site Préformation', 'Mon premier site. Fait pour le fin de notre préformation (17/11/2023)', 'url(images/cmdrPet.jpeg)', 80, '%', 30, 'vh', 'https://2023.webdev-cf2m.be/Lee/Site/', 1, 2),
 (80, 'Premier Travail d&#039;Intégration', 'Notre premier test d&#039;intégration (14/12/2023)', 'url(images/TI1.png)', 80, '%', 30, 'vh', 'https://2023.webdev-cf2m.be/Lee/TI/public/', 1, 5),
 (81, 'Deuxième Travail d&#039;Intégration', 'Le deuxième test d&#039;intégration (19/02/2024)', 'url(images/postit.jpeg)', 80, '%', 30, 'vh', 'https://2023.webdev-cf2m.be/Lee/TI2-HomeVersion/public/', 1, 8),
-(82, 'GitHub', '', 'url(images/git_shadow.jpeg)', 80, '%', 30, 'vh', 'https://github.com/Leerlandais', 1, 9),
+(82, 'GitHub', 'My GitHub', 'url(images/git_shadow.jpeg)', 80, '%', 30, 'vh', 'https://github.com/Leerlandais', 1, 9),
 (83, 'Mes débuts avec JS', 'Mes premiers pas en JS (17/11/2023 - 22/12/2023)', 'url(images/javascript.jpeg)', 80, '%', 30, 'vh', 'https://2023.webdev-cf2m.be/Lee/javaStuff/', 1, 6),
 (84, 'CF2M', 'Vers le site de l&#039;école', 'url(images/cf2m_logo.png)', 80, '%', 30, 'vh', 'https://www.cf2m.be/home', 1, 4);
 COMMIT;
