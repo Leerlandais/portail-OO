@@ -8,7 +8,8 @@ use model\Mapping\DevlogMapping;
 use model\OurPDO;
 // use PDO;
 
-class DevlogManager implements InterfaceManager{
+class DevlogManager implements InterfaceManager
+{
     
     private ?OurPDO $connect = null;
     

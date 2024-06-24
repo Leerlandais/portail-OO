@@ -75,9 +75,10 @@
         ?>
     </div>
     
+    </div>
     <?php
 // var_dump($db, $selectLogs);
+var_dump($db, $selectPort);
 ?>
-</div>
 </body>
 </html>

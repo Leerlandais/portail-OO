@@ -3,7 +3,7 @@
 
 
 $selectLogs = $devlogManager->selectAll();
-
+$selectPort = $portalManager->selectAllPortals();
 
  // ADD NEW LOG
  if (isset($_GET["addNewLog"])) {

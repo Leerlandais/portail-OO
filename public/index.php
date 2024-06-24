@@ -5,6 +5,7 @@ session_start();
 
 use model\OurPDO;
 use model\Manager\DevlogManager;
+use model\Manager\PortalsManager;
 use model\Mapping\DevlogMapping;
 
 
@@ -22,7 +23,7 @@ DB_PWD);
 
 
  $devlogManager = new DevlogManager($db);
-
+ $portalManager = new PortalsManager($db);
  require_once ("../contoller/routeController.php");
 
 
