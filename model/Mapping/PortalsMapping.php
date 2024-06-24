@@ -91,8 +91,40 @@ class PortalsMapping extends AbstractMapping
         }
         $this->port_img_width = $port_img_width;
     }
-    
-    
-    
-    
+    public function setPortImgWidthType(?string $port_img_width_type) : void {
+        if (is_string($this->verifyString($port_img_width_type))) {
+            echo $this->verifyString($port_img_width_type);
+        }
+        $this->port_img_width_type = $port_img_width_type;
+    }
+    public function setPortImgHeight(?int $port_img_height) : void {
+        if (is_string($this->verifyInt($port_img_height, 0))){
+            echo $this->verifyInt($port_img_height, 0);
+        }
+        $this->port_img_height = $port_img_height;
+    }
+    public function setPortImgHeightType(?string $port_img_height_type) : void {
+        if (is_string($this->verifyString($port_img_height_type))) {
+            echo $this->verifyString($port_img_height_type);
+        }
+        $this->port_img_height_type = $port_img_height_type;
+    }    
+    public function setPortDestUrl(?string $port_dest_url) : void {
+        if (is_string($this->verifyString($port_dest_url))) {
+            echo $this->verifyString($port_dest_url);
+        }
+        $this->port_dest_url = $port_dest_url;
+    }     
+    public function setPortVisible(?int $port_visible) : void {
+        if (is_string($this->verifyInt($port_visible, 0, 1))){
+            echo $this->verifyInt($port_visible, 0, 1);
+        }
+        $this->port_visible = $port_visible;
+    }    public function setPortPlacement(?int $port_placement) : void {
+        if (is_string($this->verifyInt($port_placement, 0, 65535))){
+            echo $this->verifyInt($port_placement, 0, 65535);
+        }
+        $this->port_placement = $port_placement;
+    }
+
     } // end of class

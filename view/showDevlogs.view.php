@@ -77,8 +77,8 @@
     
     </div>
     <?php
-// var_dump($db, $selectLogs);
-var_dump($db, $selectPort);
+// var_dump($db, $selectLogs);  // fonctionne correctement
+// var_dump($db, $selectPort);  // fonctionne correctement
 ?>
 </body>
 </html>
