@@ -5,7 +5,7 @@ namespace model\Trait;
 trait TraitTestString
 {
     protected function verifyString (?string $testThis) {
-        if ($testThis === "") {
+        if (empty($testThis)) {
             $errorMessage = "Please enter a valid string";
             return $errorMessage;
         }
