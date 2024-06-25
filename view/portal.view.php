@@ -7,9 +7,9 @@
     <title><?=$title?></title>
 </head>
 <body>
-    <?php include("inc/header.php") ?>
+<?php include("inc/header.php") ?>
 <?php
- var_dump($db); 
+ var_dump($db);
 
 
 

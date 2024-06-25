@@ -120,6 +120,29 @@ if (isset($_POST["addLogDate"],
             
         }
         
-$title = "Development Logs";
-require "../view/showDevlogs.view.php";
+
+if (isset($_GET["p"])) {
+    switch ($_GET['p']) {
+        case "home" :
+            $title = "Welcome";
+            require "../view/home.view.php";
+            break;
+        case "logs" :
+            $title = "Development Logs";
+            require "../view/showDevlogs.view.php";
+            break;
+        case "port" :
+            $title = "Portals";
+            require "../view/portal.view.php";
+            break;
+        default :
+            $title = "Page d'Accueil";
+            require "../view/home.view.php";
+    }
+}else {
+        $title = "Welcome";
+        require "../view/home.view.php";
+}
+
+
 

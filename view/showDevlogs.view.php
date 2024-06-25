@@ -9,6 +9,7 @@
     </head>
     <body>
         <div class="container d-flex flex-column align-items-center pt-5">
+        <?php include("inc/header.php") ?>
         <p class="h1 my-5">Development Logs</p>
         <!--
         <form action="" method="post">
